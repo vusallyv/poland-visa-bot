@@ -136,10 +136,10 @@ def fill_form():
                     "rodzajDokumentuPodrozy": 1,
                     "numerPaszportu": fake.passport_number(),
                     "dokumentPodrozyWydanyDnia": fake.date_between(
-                        start_date="-1m", end_date="-1d"
+                        start_date="-1m", end_date="-5d"
                     ).strftime("%Y-%m-%d"),
                     "dokumentPodrozyWaznyDo": fake.date_between(
-                        start_date="today", end_date="+1m"
+                        start_date="+2d", end_date="+1m"
                     ).strftime("%Y-%m-%d"),
                     "dokumentPodrozyWydanyPrzez": fake.company_suffix(),
                     "opiekunowie": [],
