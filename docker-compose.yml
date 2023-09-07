@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - web
+    volumes:
+      - ./media/:/code/media/
+
+  web:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+      - ./media/:/code/media/
+    environment:
+      - VIRTUAL_HOST=164.90.230.208
+      - VIRTUAL_PORT=8000
+      - HTTP_PORT=8000
